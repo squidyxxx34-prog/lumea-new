@@ -21,8 +21,8 @@ export default async function ProductPage({
         <article className="card glow">
           <h1>{product.name}</h1>
           <p className="lead">
-            Designed for modern homes with durable materials and timeless rounded
-            lines that fit every room naturally.
+            Designed for modern homes: durable materials, soft contours and a
+            balanced visual presence.
           </p>
           <p className="price" style={{ fontSize: 28 }}>{product.price}€</p>
           <div className="actions">
