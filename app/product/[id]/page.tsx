@@ -1,10 +1,15 @@
 import { products } from "@/lib/products";
 import Link from "next/link";
 
-export default function ProductPage({ params }: any) {
-  const product = products.find((p) => p.id === params.id);
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
 
-  if (!product) return <p>Produit introuvable</p>;
+  if (!product) return <p>Product not found.</p>;
 
   return (
     <main>
