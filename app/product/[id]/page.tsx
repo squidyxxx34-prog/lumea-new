@@ -7,13 +7,25 @@ export default function ProductPage({ params }: any) {
   if (!product) return <p>Produit introuvable</p>;
 
   return (
-    <main style={{ padding: 40 }}>
-      <h1>{product.name}</h1>
-      <img src={product.image} width={300} />
+    <main>
+      <section className="hero">
+        <article className="product card">
+          <img src={product.image} alt={product.name} style={{ height: 380 }} />
+        </article>
 
-      <p>{product.price}€</p>
-
-      <Link href="/checkout">Acheter</Link>
+        <article className="card glow">
+          <h1>{product.name}</h1>
+          <p className="lead">
+            Designed for modern homes: durable materials, soft contours and a
+            balanced visual presence.
+          </p>
+          <p className="price" style={{ fontSize: 28 }}>{product.price}€</p>
+          <div className="actions">
+            <Link href="/checkout" className="btn primary">Buy now</Link>
+            <Link href="/shop" className="btn">Back to shop</Link>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }
