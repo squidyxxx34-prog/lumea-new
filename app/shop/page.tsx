@@ -3,20 +3,22 @@ import { products } from "../../lib/products";
 
 export default function Shop() {
   return (
-    <main style={{ padding: 40 }}>
-      <h1>Boutique</h1>
+    <main>
+      <section className="card">
+        <h1>House Essentials</h1>
+        <p className="lead">Refined objects for every corner of your home.</p>
+      </section>
 
-      <div style={{ display: "flex", gap: 20 }}>
+      <section className="grid">
         {products.map((p) => (
-          <div key={p.id}>
-            <img src={p.image} width={200} />
+          <article key={p.id} className="product">
+            <img src={p.image} alt={p.name} />
             <h3>{p.name}</h3>
-            <p>{p.price}€</p>
-
-            <Link href={`/product/${p.id}`}>Voir</Link>
-          </div>
+            <p className="price">{p.price}€</p>
+            <Link href={`/product/${p.id}`} className="btn">View details</Link>
+          </article>
         ))}
-      </div>
+      </section>
     </main>
   );
 }

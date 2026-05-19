@@ -1,19 +1,36 @@
 import { products } from "@/lib/products";
 import Link from "next/link";
 
-export default function ProductPage({ params }: any) {
-  const product = products.find((p) => p.id === params.id);
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
 
-  if (!product) return <p>Produit introuvable</p>;
+  if (!product) return <p>Product not found.</p>;
 
   return (
-    <main style={{ padding: 40 }}>
-      <h1>{product.name}</h1>
-      <img src={product.image} width={300} />
+    <main>
+      <section className="hero">
+        <article className="product card">
+          <img src={product.image} alt={product.name} style={{ height: 380 }} />
+        </article>
 
-      <p>{product.price}€</p>
-
-      <Link href="/checkout">Acheter</Link>
+        <article className="card glow">
+          <h1>{product.name}</h1>
+          <p className="lead">
+            Designed for modern homes with durable materials and timeless rounded
+            lines that fit every room naturally.
+          </p>
+          <p className="price" style={{ fontSize: 28 }}>{product.price}€</p>
+          <div className="actions">
+            <Link href="/checkout" className="btn primary">Buy now</Link>
+            <Link href="/shop" className="btn">Back to shop</Link>
+          </div>
+        </article>
+      </section>
     </main>
   );
 }
