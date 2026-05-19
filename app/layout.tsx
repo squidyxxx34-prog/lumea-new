@@ -1,11 +1,5 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: "LUMÉA HOME",
-  description: "Modern home furniture and accessories for stylish interiors.",
-};
 
 export default function RootLayout({
   children,
@@ -13,10 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <body>
         <div className="page-shell">
-          <nav className="nav" aria-label="Primary navigation">
+          <nav className="nav">
             <Link href="/" className="brand">LUMÉA HOME</Link>
             <div className="nav-links">
               <Link href="/shop">Shop</Link>

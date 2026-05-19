@@ -5,10 +5,10 @@ export default function Home() {
     <main>
       <section className="hero">
         <article className="card glow">
-          <h1>Curated luxury for remarkable interiors.</h1>
+          <h1>Design your dream home with living objects that move you.</h1>
           <p className="lead">
-            Discover signature house pieces crafted with elegant materials,
-            rounded silhouettes, and subtle details that elevate everyday living.
+            A modern curated furniture concept: warm woods, textured ceramics, and
+            smart lighting with timeless lines for every room.
           </p>
           <div className="actions">
             <Link href="/shop" className="btn primary">Explore Collection</Link>
@@ -17,19 +17,19 @@ export default function Home() {
         </article>
 
         <article className="card">
-          <h3>Private Interior Concierge</h3>
+          <h3>Smart Interior Mood</h3>
           <p className="lead">
-            From statement lounge seating to dining accents, every selection is
-            tailored for a calm, elevated, and timeless home atmosphere.
+            Ambient scenes transition automatically from morning light to cozy
+            evening mode. Every surface is chosen to feel calm and premium.
           </p>
         </article>
       </section>
 
       <section className="grid">
         {[
-          ["Living Room", "Gallery-inspired comfort with sculpted forms"],
-          ["Kitchen", "Refined utility finished in warm tones"],
-          ["Bedroom", "Soft textures and layered ambient lighting"],
+          ["Living Room", "Soft modular sofas and sculptural tables"],
+          ["Kitchen", "Functional pieces with minimalist finishes"],
+          ["Bedroom", "Comfort fabrics and layered lighting"],
         ].map(([title, desc]) => (
           <article key={title} className="card">
             <h3>{title}</h3>
